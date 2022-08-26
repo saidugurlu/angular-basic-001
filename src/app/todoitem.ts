@@ -1,3 +1,10 @@
+export interface TodoItem {
+    description: string;
+    action: string;
+}
+
+
+
 /* export class TodoItem{
   description: string;
   action: string;
@@ -18,8 +25,3 @@
 }
  */
 
-
-export interface TodoItem {
-    description: string;
-    action: string;
-}

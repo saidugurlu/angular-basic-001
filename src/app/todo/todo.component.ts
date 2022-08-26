@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TodoItem } from '../todoitem';
+import { Model } from '../model';
+
 
 @Component({
   selector: 'app-todo',
@@ -7,28 +8,17 @@ import { TodoItem } from '../todoitem';
   styleUrls: ['./todo.component.css'],
 })
 export class TodoComponent {
-  constructor() {}
-  private name: string = 'Said';
+/*   constructor() {} */
+
+  model = new Model();
 
   getName() {
-    return this.name;
+    return this.model.name;
   }
 
-  items: TodoItem[] = [
-    // { description: 'Einkaufen', action: 'no' },
-    // { description: 'Kochen', action: 'yes' },
-    // { description: 'Sport ', action: 'no ' },
-
-   /*  new TodoItem('Einkaufen', 'no'),
-    new TodoItem('Kochen', 'yes'),
-    new TodoItem('Sport', 'no'), */
+  getItems() {
+    return this.model.items;
+  }
 
 
-     { description: 'Einkaufen', action: 'no' },
-    { description: 'Kochen', action: 'yes' },
-    { description: 'Sport ', action: 'no ' },
-
-
-
-  ];
 }
