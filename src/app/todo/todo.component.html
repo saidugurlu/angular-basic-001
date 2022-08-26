@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-5 mx-auto">
-      <h3 class="bg-primary text-white text-center p-3">Todo List</h3>
+      <h3 class="bg-primary text-white text-center p-3">
+        {{getName()}}' Todo List</h3>
 
 <div class="input-group mb-3">
 <input type="text" class="form-control">
@@ -26,25 +27,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Einkaufen</td>
-            <td>Ja</td>
+          <tr *ngFor="let item of items; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.action}}</td>
           </tr>
 
-          <tr>
-            <td>2</td>
-            <td>Coachen</td>
-            <td>Ja</td>
-          </tr>
 
-          <tr>
-            <td>3</td>
-            <td>Aufraumen</td>
-            <td>Nein</td>
-          </tr>
         </tbody>
       </table>
+
+
     </div>
   </div>
 </div>
