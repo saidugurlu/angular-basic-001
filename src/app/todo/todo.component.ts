@@ -12,8 +12,14 @@ export class TodoComponent {
   model = new Model();
 
   addItem(value: string) {
+    if (value!=='') {
     this.model.items.push({ description: value, action: 'no' });
   }
+  else {
+    alert('Bitte einen Text eingeben');
+  }
+  }
+
 
   getName() {
     return this.model.name;
