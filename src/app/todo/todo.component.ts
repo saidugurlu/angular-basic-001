@@ -11,6 +11,15 @@ export class TodoComponent {
 /*   constructor() {} */
 
   model = new Model();
+addItem(){
+
+
+  console.log('addItem');
+
+}
+
+
+
 
   getName() {
     return this.model.name;
