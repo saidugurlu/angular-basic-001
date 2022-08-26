@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoItem } from '../todoitem';
 
 @Component({
   selector: 'app-todo',
@@ -12,9 +13,14 @@ export class TodoComponent {
   getName() {
     return this.name;
   }
-  items: any[] = [
-    { description: 'Einkaufen', action: 'no' },
-    { description: 'Kochen', action: 'yes' },
-    { description: 'Sport ', action: 'no ' },
+
+  items: TodoItem[] = [
+    // { description: 'Einkaufen', action: 'no' },
+    // { description: 'Kochen', action: 'yes' },
+    // { description: 'Sport ', action: 'no ' },
+
+    new TodoItem('Einkaufen', 'no'),
+    new TodoItem('Kochen', 'yes'),
+    new TodoItem('Sport', 'no'),
   ];
 }

@@ -17,4 +17,4 @@ export class TodoItem {
   }
 }
 
-const td = new TodoItem("Einkaufen", "Sport");
+/* const td = new TodoItem("Einkaufen", "Sport"); */
