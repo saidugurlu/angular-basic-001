@@ -19,8 +19,16 @@ export class TodoComponent {
     // { description: 'Kochen', action: 'yes' },
     // { description: 'Sport ', action: 'no ' },
 
-    new TodoItem('Einkaufen', 'no'),
+   /*  new TodoItem('Einkaufen', 'no'),
     new TodoItem('Kochen', 'yes'),
-    new TodoItem('Sport', 'no'),
+    new TodoItem('Sport', 'no'), */
+
+
+     { description: 'Einkaufen', action: 'no' },
+    { description: 'Kochen', action: 'yes' },
+    { description: 'Sport ', action: 'no ' },
+
+
+
   ];
 }
