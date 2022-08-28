@@ -7,9 +7,9 @@ export class Model {
   constructor() {
     this.name = 'Said';
     this.items = [
-      { description: 'Einkaufen', action: 'no' },
-      { description: 'Kochen', action: 'yes' },
-      { description: 'Sport ', action: 'no ' },
+      { description: 'Einkaufen', action: false },
+      { description: 'Kochen', action: true },
+      { description: 'Sport ', action: false },
     ];
   }
 }

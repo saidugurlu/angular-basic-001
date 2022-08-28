@@ -16,10 +16,10 @@
       </div>
 
       <div class="form-check mb-3">
-        <input type="checkbox" class="form-check-input" id="displayAll" />
+        <input type="checkbox" [(ngModel)]="displayAll" class="form-check-input" />
         <label class="form-check-label" for="displayAll">Display All</label>
       </div>
-
+      {{displayAll}}
       <table class="table table-bordered">
         <thead>
           <tr>

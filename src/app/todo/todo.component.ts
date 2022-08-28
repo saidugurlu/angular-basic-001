@@ -9,23 +9,27 @@ import { Model } from '../model';
 export class TodoComponent {
   /*   constructor() {} */
 
+  displayAll: boolean = false;
+
   model = new Model();
 
   addItem(value: string) {
-    if (value!=='') {
-    this.model.items.push({ description: value, action: 'no' });
+    if (value !== '') {
+      this.model.items.push({ description: value, action: false });
+    } else {
+      alert('Bitte einen Text eingeben');
+    }
   }
-  else {
-    alert('Bitte einen Text eingeben');
-  }
-  }
-
 
   getName() {
     return this.model.name;
   }
 
   getItems() {
-    return this.model.items;
+    if (this.displayAll) {
+      return this.model.items;
+    } else {
+      return this.model.items.filter((item) => item.action === false);
+    }
   }
 }
