@@ -8,15 +8,14 @@
       <div class="input-group mb-3">
         <input
           type="text"
-          #txtItem
           class="form-control"
-          (keyup.enter)="addItem(txtItem.value)"
-
+          [(ngModel)]="inputText"
+          (keyup.enter)="addItem()"
         />
         <button
-        [class.disabled]="txtItem.value.length===0"
-          class="btn btn-outline-primary"
-          (click)="addItem(txtItem.value); txtItem.value = ''"
+          [class]="getBtnClass()"
+          class="btn "
+          (click)="addItem()"
         >
           Add
         </button>
@@ -31,7 +30,10 @@
         <label class="form-check-label" for="displayAll">Display All</label>
       </div>
 
-      <div *ngIf="getItems().length === 0 else itemsTable"  class="alert alert-warning">
+      <div
+        *ngIf="getItems().length === 0; else itemsTable"
+        class="alert alert-warning"
+      >
         List is empty
       </div>
 
@@ -45,7 +47,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of getItems(); let i = index" [class]="{'bg-info':item.action, 'bg-danger':!item.action}">
+            <tr
+              *ngFor="let item of getItems(); let i = index"
+              [class]="{ 'bg-info': item.action, 'bg-danger': !item.action }"
+            >
               <td>{{ i + 1 }}</td>
               <td>{{ item.description }}</td>
               <td>
@@ -62,8 +67,6 @@
           </tbody>
         </table>
       </ng-template>
-
-
     </div>
   </div>
 </div>

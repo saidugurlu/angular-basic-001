@@ -7,15 +7,19 @@ import { Model } from '../model';
   styleUrls: ['./todo.component.css'],
 })
 export class TodoComponent {
-  /*   constructor() {} */
+  constructor() {}
 
   displayAll: boolean = false;
+  inputText: string = '';
 
   model = new Model();
 
-  addItem(value: string) {
-    if (value !== '') {
-      this.model.items.push({ description: value, action: false });
+  addItem() {
+    if (this.inputText !== '') {
+      let data = { description: this.inputText, action: false }
+      this.model.items.push(data);
+      this.inputText = '';
+
     } else {
       alert('Bitte einen Text eingeben');
     }
@@ -31,5 +35,13 @@ export class TodoComponent {
     } else {
       return this.model.items.filter((item) => item.action === false);
     }
+  }
+
+  getBtnClass() {
+    return {
+      disabled: this.inputText.length === 0,
+      'btn-secondary': this.inputText.length === 0,
+      'btn-primary': this.inputText.length > 0,
+    };
   }
 }
