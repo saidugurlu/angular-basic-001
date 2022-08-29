@@ -11,8 +11,10 @@
           #txtItem
           class="form-control"
           (keyup.enter)="addItem(txtItem.value)"
+
         />
         <button
+        [class.disabled]="txtItem.value.length===0"
           class="btn btn-outline-primary"
           (click)="addItem(txtItem.value); txtItem.value = ''"
         >
@@ -43,7 +45,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of getItems(); let i = index">
+            <tr *ngFor="let item of getItems(); let i = index" [class]="{'bg-info':item.action, 'bg-danger':!item.action}">
               <td>{{ i + 1 }}</td>
               <td>{{ item.description }}</td>
               <td>
